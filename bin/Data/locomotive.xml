@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TrainSimLocomotive>
+  <MaxBreakForce>100</MaxBreakForce>
+  <MaxIndependBreakLevel>2</MaxIndependBreakLevel>
+  <MaxTrainBreakLevel>2</MaxTrainBreakLevel>
+  <MaxThrottleLevel>8</MaxThrottleLevel>
+  <EngineForceTable >8000</EngineForceTable>
+
+  <Body>
+    <Mass>80000</Mass>
+    <MeshFileName>TE7/body.x</MeshFileName>
+    <TexFileName>TE7/te7_a.tga</TexFileName>
+    <XLenght>16</XLenght>
+    <YHeight>2.5</YHeight>
+    <ZWidth>3.0</ZWidth>
+  </Body>
+  
+  <Frame_A>
+    <Position_on_Body>
+      <x>4.2</x>
+      <y>2.5</y>
+    </Position_on_Body>
+    <!-- z="0" mindig! vagyis középen van-->
+    <Body>
+      <Mass>3000</Mass>
+      <MeshFileName>TE7/frame_a.x</MeshFileName>
+      <TexFileName>TE7/te3bogey_a.tga</TexFileName>
+      <XLenght>0</XLenght>
+      <YHeight>0.80</YHeight>
+      <ZWidth>0</ZWidth>
+    </Body>
+    <Gauge>1.43</Gauge>
+    <Wheel_Diameter>1.0</Wheel_Diameter>
+    <AxleNums>3</AxleNums>
+    <AxleDist>2.0</AxleDist>
+    <suspensionRestLenght>0.2</suspensionRestLenght>
+    <suspensionStiffness>500.0</suspensionStiffness>
+    <maxSuspensionForce>110000.0</maxSuspensionForce>
+    <maxSuspensionTravelCm>200</maxSuspensionTravelCm>
+    <wheelsDampingRelaxation>80.0</wheelsDampingRelaxation>
+    <wheelsDampingCompression>1.0</wheelsDampingCompression>
+    <frictionSlip>0.2</frictionSlip>
+    <frictionSlipOnSand>1.2</frictionSlipOnSand>
+    <rollInfluence>0.1</rollInfluence>
+
+    <WheelLeft>
+      <Mass>0</Mass>
+      <MeshFileName>cylinder_X.x</MeshFileName>
+      <TexFileName>PFKockas.png</TexFileName>
+      <XLenght>1.0</XLenght>
+      <YHeight>1.0</YHeight>
+      <ZWidth>1.0</ZWidth>   
+    </WheelLeft>
+    <WheelRight>
+      <Mass>0</Mass>
+      <MeshFileName>cylinder_X.x</MeshFileName>
+      <TexFileName>PFKockas.png</TexFileName>
+      <XLenght>1.0</XLenght>
+      <YHeight>1.0</YHeight>
+      <ZWidth>1.0</ZWidth>
+    </WheelRight>
+  </Frame_A>
+
+  <Frame_B>
+    <Position_on_Body>
+      <x>-4.2</x>
+      <y>2.5</y>
+    </Position_on_Body>
+    <!-- z="0" mindig! vagyis középen van-->
+    <Body>
+      <Mass>3000</Mass>
+      <MeshFileName>TE7/frame_b.x</MeshFileName>
+      <TexFileName>TE7/te3bogey_a.tga</TexFileName>
+      <XLenght>0</XLenght>
+      <YHeight>0.80</YHeight>
+      <ZWidth>0</ZWidth>
+    </Body>
+    <Gauge>1.43</Gauge>
+    <Wheel_Diameter>1.0</Wheel_Diameter>
+    <AxleNums>3</AxleNums>
+    <AxleDist>2.0</AxleDist>
+    <suspensionRestLenght>0.2</suspensionRestLenght>
+    <suspensionStiffness>500.0</suspensionStiffness>
+    <maxSuspensionForce>110000.0</maxSuspensionForce>
+    <maxSuspensionTravelCm>200</maxSuspensionTravelCm>
+    <wheelsDampingRelaxation>80.0</wheelsDampingRelaxation>
+    <wheelsDampingCompression>1.0</wheelsDampingCompression>
+    <frictionSlip>0.2</frictionSlip>
+    <frictionSlipOnSand>1.2</frictionSlipOnSand>
+    <rollInfluence>0.1</rollInfluence>
+
+    <WheelLeft>
+      <Mass>0</Mass>
+      <MeshFileName>cylinder_X.x</MeshFileName>
+      <TexFileName>PFKockas.png</TexFileName>
+      <XLenght>1.0</XLenght>
+      <YHeight>1.0</YHeight>
+      <ZWidth>1.0</ZWidth>
+    </WheelLeft>
+    <WheelRight>
+      <Mass>0</Mass>
+      <MeshFileName>cylinder_X.x</MeshFileName>
+      <TexFileName>PFKockas.png</TexFileName>
+      <XLenght>1.0</XLenght>
+      <YHeight>1.0</YHeight>
+      <ZWidth>1.0</ZWidth>
+    </WheelRight>
+  </Frame_B>
+
+</TrainSimLocomotive>
