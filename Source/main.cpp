@@ -78,7 +78,7 @@ public:
 
         cameraNode_=scene_->CreateChild("Camera");
         Camera* camera=cameraNode_->CreateComponent<Camera>();
-        camera->SetFarClip(50000);
+        camera->SetFarClip(20000);
         SoundListener* listener=cameraNode_->CreateComponent<SoundListener>();
         GetSubsystem<Audio>()->SetListener(listener);
         GetSubsystem<Audio>()->SetMasterGain(SOUND_MUSIC,0.3);
@@ -97,8 +97,8 @@ public:
         Node* zoneNode=scene_->CreateChild("Zone");
         Zone* zone=zoneNode->CreateComponent<Zone>();
         zone->SetBoundingBox(BoundingBox(-50000.0f,50000.0f));
-        zone->SetFogStart(100000.0f);
-        zone->SetFogEnd(200000.0f);
+        zone->SetFogStart(10000.0f);
+        zone->SetFogEnd(20000.0f);
         zone->SetAmbientColor(Color(0.3,0.3,0.3));
 
         SubscribeToEvent(E_KEYDOWN,URHO3D_HANDLER(UTS,HandleKeyDown));

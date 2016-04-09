@@ -13,3 +13,5 @@ Build/*.layout
 *.swp
 *.swo
 Clean/
+bin/CoreData/Shaders/HLSL/Cache/
+bin/Data/Shaders/HLSL/Cache/
