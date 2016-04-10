@@ -64,13 +64,19 @@ void gs_main_menu::update(StringHash eventType,VariantMap& eventData)
     float timeStep=eventData[Update::P_TIMESTEP].GetFloat();
 
     // Movement speed as world units per second
-    float MOVE_SPEED=1.0f;
-    // Mouse sensitivity as degrees per pixel
+    //float MOVE_SPEED=1.0f;
+	// Mouse sensitivity as degrees per pixel
     const float MOUSE_SENSITIVITY=0.1f;
 
     // camera movement
     Input* input=GetSubsystem<Input>();
     Node* cameraNode_=globals::instance()->camera->GetNode();
+	// Let the camera speed high as its position above the terrain. Max 500m/s
+	Terrain* terr = globals::instance()->scene->GetChild("Terrain")->GetComponent<Terrain>();
+	Vector3 vv = cameraNode_->GetPosition();
+	float hh = terr->GetHeight(vv);
+	float MOVE_SPEED = Clamp(vv.y_ - hh, 5.0f, 500.0f);
+
     if(input->GetQualifierDown(1))  // 1 is shift, 2 is ctrl, 4 is alt
         MOVE_SPEED*=20;
     if(input->GetKeyDown('W'))
@@ -101,7 +107,14 @@ void gs_main_menu::update(StringHash eventType,VariantMap& eventData)
             cameraNode_->Yaw(yaw_);
             cameraNode_->Pitch(pitch_);
         }
-    }
+		Vector3 v = cameraNode_->GetPosition();
+		float h = terr->GetHeight(v);
+		if (v.y_ < h + 1.0f)
+		{
+			v.y_ = h + 1.0f;
+			cameraNode_->SetPosition(v);
+		}
+	}
 }
 
 void gs_main_menu::HandleKeyDown(StringHash eventType,VariantMap& eventData)

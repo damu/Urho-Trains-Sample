@@ -57,9 +57,9 @@ public:
     virtual void Setup()
     {
         engineParameters_["FullScreen"]=false;
-        engineParameters_["WindowWidth"]=1280;
+        engineParameters_["WindowWidth"]=1200;
         engineParameters_["WindowHeight"]=720;
-        engineParameters_["WindowResizable"]=true;
+        engineParameters_["WindowResizable"]=false;
         engineParameters_["Multisample"]=16;
     }
 
