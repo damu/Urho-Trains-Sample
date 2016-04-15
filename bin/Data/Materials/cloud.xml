@@ -1,0 +1,5 @@
+<material>
+    <technique name="Techniques/DiffUnlitAlpha.xml" />
+    <texture unit="diffuse" name="Textures/cloud.png" />
+    <parameter name="MatDiffColor" value="0.4 0.4 0.4 1"/>
+</material>

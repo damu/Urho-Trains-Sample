@@ -22,11 +22,14 @@
 #include <Urho3D/Audio/SoundListener.h>
 #include <Urho3D/Audio/Audio.h>
 
+#include "weather_system.h"
+
 /// The main menu displayed when starting the game.
 class gs_main_menu : public game_state
 {
 public:
     Urho3D::Node* node_sun=0;
+    weather_system weather;
 
     gs_main_menu();
     void update(Urho3D::StringHash eventType,Urho3D::VariantMap& eventData);

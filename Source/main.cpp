@@ -109,6 +109,7 @@ public:
         globals::instance()->scene=scene_;
         globals::instance()->context=context_;
         globals::instance()->engine=engine_;
+        globals::instance()->zone=zone;
         globals::instance()->game_states.emplace_back(new gs_main_menu);
     }
 

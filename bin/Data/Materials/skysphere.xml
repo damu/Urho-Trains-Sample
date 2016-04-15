@@ -1,0 +1,8 @@
+<material>
+    <technique name="Techniques/skysphere.xml" />
+    <parameter name="SunDir" value="0.64 0.64 0.64"/>
+    <parameter name="SkyColor" value="0.3 0.3 0.99 1" />
+    <parameter name="SunColor" value="1.0 0.6 0.6 1.0" />
+    <texture name="Textures/stars.png" unit="diffuse"/>
+    <cull value="none" />
+</material>

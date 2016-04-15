@@ -10,33 +10,7 @@ gs_main_menu::gs_main_menu() : game_state()
     node_camera->SetPosition(Vector3(0,0,0));
     node_camera->SetDirection(Vector3::FORWARD);
 
-    // skybox
-    {
-        Node* skyNode=globals::instance()->scene->CreateChild("Sky");
-        nodes.emplace_back(skyNode);
-        skyNode->SetScale(1500.0f);
-        Skybox* skybox=skyNode->CreateComponent<Skybox>();
-        skybox->SetModel(globals::instance()->cache->GetResource<Model>("Models/Box.mdl"));
-        skybox->SetMaterial(globals::instance()->cache->GetResource<Material>("Materials/Skybox.xml"));
-    }
-
-    // sun
-    {
-        node_sun=globals::instance()->scene->CreateChild("Light");
-        nodes.emplace_back(node_sun);
-        Light* light=node_sun->CreateComponent<Light>();
-        light->SetLightType(LIGHT_DIRECTIONAL);
-        light->SetCastShadows(true);
-        light->SetShadowBias(BiasParameters(0.000000025f,0.01f));
-        light->SetShadowCascade(CascadeParameters(2.0f,6.0f,18.0f,56.0f,100.0f,100.0f));
-        light->SetShadowResolution(1.0);
-        light->SetBrightness(0.8);
-        light->SetColor(Color(1.0,1.0,1.0,1));
-        node_sun->SetDirection(Vector3::FORWARD);
-        node_sun->Yaw(-150);   // horizontal
-        node_sun->Pitch(30);   // vertical
-        node_sun->Translate(Vector3(0,0,-20000));
-    }
+    weather.init(globals::instance()->scene,globals::instance()->cache,globals::instance()->zone);
 
     // terrain
     {
@@ -62,6 +36,7 @@ gs_main_menu::gs_main_menu() : game_state()
 void gs_main_menu::update(StringHash eventType,VariantMap& eventData)
 {
     float timeStep=eventData[Update::P_TIMESTEP].GetFloat();
+    weather.update(timeStep);
 
     // Movement speed as world units per second
     //float MOVE_SPEED=1.0f;

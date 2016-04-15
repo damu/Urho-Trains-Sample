@@ -6,6 +6,7 @@
 #include <Urho3D/Engine/Engine.h>
 #include <Urho3D/Core/Context.h>
 #include <Urho3D/Graphics/Camera.h>
+#include <Urho3D/Graphics/Zone.h>
 #include <Urho3D/Scene/Scene.h>
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Physics/PhysicsWorld.h>
@@ -23,6 +24,7 @@ public:
     Urho3D::ResourceCache* cache=0;
     Urho3D::Context* context=0;
     Urho3D::Engine* engine=0;
+    Urho3D::Zone* zone=0;
     Urho3D::PhysicsWorld* physical_world=0;
 
     /// The current game states, so that game states can switch to another game state.

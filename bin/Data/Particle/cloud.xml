@@ -1,0 +1,23 @@
+<particleemitter>
+    <material name="Materials/cloud.xml" />
+    <updateinvisible enable="true" />
+    <relative enable="false" />
+    <numparticles value="100" />
+    <activetime value="0" />
+    <inactivetime value="0" />
+    <emittertype value="Sphere" />
+    <emittersize value="10 10 10" />
+    <emissionrate min="2" max="5" />
+    <sorted enable="true" />
+    <rotationspeed min="-6" max="6" />
+    <direction min="-0.5 -0.5 -0.5" max="0.5 0.5 0.5" />
+    <velocity min="7" max="20" />
+    <particlesize min="150 150" max="300 300" />
+    <sizedelta add="0" mul="1" />
+    <timetolive min="12" max="12" />
+    <constantforce value="0 0 0" />
+    <colorfade color="1.0 1.0 1.0 0" time="0.0" />
+    <colorfade color="1.0 1.0 1.0 0.1" time="3" />
+    <colorfade color="1.0 1.0 1.0 0.1" time="9" />
+    <colorfade color="1.0 1.0 1.0 0" time="12" />
+</particleemitter>
